@@ -1,0 +1,159 @@
+/* Keyframe Animations */
+@keyframes sparkle {
+    from { transform: translateY(0px) rotate(0deg); }
+    to { transform: translateY(-150px) rotate(360deg); }
+}
+
+@keyframes grid-move {
+    from { transform: translate(0, 0); }
+    to { transform: translate(50px, 50px); }
+}
+
+@keyframes grid-pulse {
+    from { opacity: 0.5; }
+    to { opacity: 0.8; }
+}
+
+@keyframes logo-pulse {
+    0%, 100% { 
+        text-shadow: var(--shadow-glow) var(--primary-cyan);
+        transform: scale(1);
+    }
+    50% { 
+        text-shadow: 
+            0 0 30px var(--primary-cyan),
+            0 0 60px var(--primary-cyan),
+            0 0 90px var(--primary-cyan);
+        transform: scale(1.02);
+    }
+}
+
+@keyframes icon-float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-5px) rotate(5deg); }
+}
+
+@keyframes title-line {
+    from { width: 30px; opacity: 0.5; }
+    to { width: 100px; opacity: 1; }
+}
+
+@keyframes power-pulse {
+    from { 
+        transform: scale(1) rotate(0deg);
+        box-shadow: var(--shadow-glow) rgba(0, 212, 255, 0.4);
+    }
+    to { 
+        transform: scale(1.1) rotate(3deg);
+        box-shadow: var(--shadow-strong) rgba(0, 212, 255, 0.8);
+    }
+}
+
+@keyframes canvas-glow {
+    from { 
+        box-shadow: var(--shadow-glow) rgba(0, 212, 255, 0.3), inset 0 0 50px rgba(0, 212, 255, 0.05);
+        filter: hue-rotate(0deg);
+    }
+    to { 
+        box-shadow: var(--shadow-strong) rgba(0, 212, 255, 0.6), inset 0 0 50px rgba(0, 212, 255, 0.15);
+        filter: hue-rotate(10deg);
+    }
+}
+
+@keyframes border-rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes title-glow {
+    from { 
+        text-shadow: 
+            0 0 20px var(--primary-cyan),
+            0 0 40px var(--primary-cyan);
+    }
+    to { 
+        text-shadow: 
+            0 0 30px var(--primary-cyan),
+            0 0 60px var(--primary-cyan),
+            0 0 90px var(--primary-cyan),
+            0 0 120px var(--primary-cyan);
+    }
+}
+
+@keyframes achievement-unlock {
+    0% { 
+        transform: scale(0.5) rotateY(90deg);
+        opacity: 0;
+    }
+    50% { 
+        transform: scale(1.2) rotateY(0deg);
+    }
+    100% { 
+        transform: scale(1) rotateY(0deg);
+        opacity: 1;
+    }
+}
+
+@keyframes achievement-popup {
+    0% { 
+        transform: scale(0) rotate(180deg);
+        opacity: 0;
+    }
+    50% { 
+        transform: scale(1.3) rotate(0deg);
+    }
+    100% { 
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInNotification {
+    from { 
+        transform: translateX(100%) rotateY(90deg);
+        opacity: 0;
+    }
+    to { 
+        transform: translateX(0) rotateY(0deg);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOutNotification {
+    to { 
+        transform: translateX(100%) rotateY(-90deg);
+        opacity: 0;
+    }
+}
+
+@keyframes button-press {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.95); }
+    100% { transform: scale(1); }
+}
+
+@keyframes stat-update {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+@keyframes shine {
+    0% { transform: translateX(-100%) skewX(-15deg); }
+    100% { transform: translateX(200%) skewX(-15deg); }
+}
+
+@keyframes rainbow-text {
+    from { opacity: 0; }
+    to { opacity: 0.3; }
+}
+
+@keyframes notification-shine {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+@keyframes achievement-glow {
+    from { box-shadow: var(--shadow-glow) rgba(0, 255, 159, 0.3); }
+    to { box-shadow: var(--shadow-strong) rgba(0, 255, 159, 0.5); }
+}
