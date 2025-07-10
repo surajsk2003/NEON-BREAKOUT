@@ -46,7 +46,11 @@ class NeonBreakout {
         this.setupUI();
         this.resizeCanvas();
         this.gameLoop();
-        this.showScreen('startScreen');
+        
+        // Show start screen after a brief delay to ensure DOM is ready
+        setTimeout(() => {
+            this.showScreen('startScreen');
+        }, 100);
     }
     
     setupEventListeners() {
@@ -590,12 +594,15 @@ class NeonBreakout {
     }
     
     showScreen(screenId) {
-        document.querySelectorAll('.overlay').forEach(overlay => {
-            overlay.classList.remove('active');
-        });
+        // Hide all overlays first
+        this.hideAllOverlays();
         
+        // Show specific overlay
         setTimeout(() => {
-            document.getElementById(screenId).classList.add('active');
+            const overlay = document.getElementById(screenId);
+            if (overlay) {
+                overlay.classList.add('active');
+            }
         }, 100);
     }
     
@@ -603,6 +610,13 @@ class NeonBreakout {
         document.querySelectorAll('.overlay').forEach(overlay => {
             overlay.classList.remove('active');
         });
+    }
+    
+    hideOverlay(overlayId) {
+        const overlay = document.getElementById(overlayId);
+        if (overlay) {
+            overlay.classList.remove('active');
+        }
     }
     
     showMainMenu() {

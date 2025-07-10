@@ -14,14 +14,8 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
 </head>
 <body>
-    <!-- Audio elements for sound effects -->
-    <audio id="paddleHit" preload="auto">
-        <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmAcBDWE0fPJeyoGUY7U8d2OSQwKVKzl8bJnFgxJ"><span aria-hidden="true"></span></audio>
-    
     <div class="bg-effects" role="presentation">
         <div class="stars"></div>
-        <div class="grid-overlay"></div>
-        <canvas id="backgroundCanvas" class="bg-canvas"></canvas>
     </div>
     
     <div class="game-container">
@@ -60,20 +54,11 @@
                     </div>
                 </div>
             </div>
-            <div class="audio-controls">
-                <button id="muteBtn" class="control-btn" aria-label="Toggle sound">🔊</button>
-                <button id="fullscreenBtn" class="control-btn" aria-label="Toggle fullscreen">⛶</button>
-            </div>
         </header>
         
         <main class="game-main" role="main">
             <div class="game-area">
                 <canvas id="gameCanvas" width="800" height="600" role="img" aria-label="Game area"></canvas>
-                <div class="debug-info" id="debugInfo" hidden>
-                    <div>FPS: <span id="fps">60</span></div>
-                    <div>Particles: <span id="particleCount">0</span></div>
-                    <div>Ball Speed: <span id="ballSpeed">0</span></div>
-                </div>
             </div>
             
             <aside class="game-sidebar" role="complementary">
@@ -213,10 +198,6 @@
                     <span id="finalTime" class="stat-value">00:00</span>
                 </div>
             </div>
-            <div class="new-achievements" id="newAchievements" style="display: none;">
-                <h3>New Achievements Unlocked!</h3>
-                <div class="achievement-list" id="achievementList"></div>
-            </div>
             <button id="restartBtn" class="neon-btn secondary">
                 <span class="btn-text">PLAY AGAIN</span>
             </button>
@@ -249,98 +230,6 @@
             </button>
         </div>
     </div>
-ments</div>
-                    <div class="feature">💾 Save System</div>
-                </div>
-            </div>
-        </div>
-        
-        <div id="pauseScreen" class="screen">
-            <div class="screen-content">
-                <h2 class="screen-title">GAME PAUSED</h2>
-                <div class="pause-stats">
-                    <div class="stat">
-                        <span class="stat-label">CURRENT SCORE</span>
-                        <span id="pauseScore" class="stat-value">0</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-label">TIME PLAYED</span>
-                        <span id="timePlayed" class="stat-value">00:00</span>
-                    </div>
-                </div>
-                <div class="pause-buttons">
-                    <button id="resumeBtn" class="neon-btn primary">
-                        <span class="btn-text">RESUME</span>
-                    </button>
-                    <button id="saveGameBtn" class="neon-btn secondary">
-                        <span class="btn-text">SAVE GAME</span>
-                    </button>
-                    <button id="mainMenuBtn" class="neon-btn secondary">
-                        <span class="btn-text">MAIN MENU</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-        
-        <div id="gameOverScreen" class="screen">
-            <div class="screen-content">
-                <h2 class="screen-title">GAME OVER</h2>
-                <div class="final-stats">
-                    <div class="stat">
-                        <span class="stat-label">FINAL SCORE</span>
-                        <span id="finalScore" class="stat-value">0</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-label">LEVEL REACHED</span>
-                        <span id="finalLevel" class="stat-value">1</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-label">BEST COMBO</span>
-                        <span id="finalCombo" class="stat-value">x1</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-label">TIME PLAYED</span>
-                        <span id="finalTime" class="stat-value">00:00</span>
-                    </div>
-                </div>
-                <div class="new-achievements" id="newAchievements" style="display: none;">
-                    <h3>New Achievements Unlocked!</h3>
-                    <div class="achievement-list" id="achievementList"></div>
-                </div>
-                <button id="restartBtn" class="neon-btn secondary">
-                    <span class="btn-text">PLAY AGAIN</span>
-                </button>
-                <button id="backToMenuBtn" class="neon-btn secondary">
-                    <span class="btn-text">MAIN MENU</span>
-                </button>
-            </div>
-        </div>
-        
-        <div id="levelCompleteScreen" class="screen">
-            <div class="screen-content">
-                <h2 class="screen-title">LEVEL COMPLETE!</h2>
-                <div class="level-stats">
-                    <div class="stat">
-                        <span class="stat-label">LEVEL BONUS</span>
-                        <span id="bonusPoints" class="stat-value">+500</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-label">TIME BONUS</span>
-                        <span id="timeBonus" class="stat-value">+200</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-label">PERFECT BONUS</span>
-                        <span id="perfectBonus" class="stat-value">+0</span>
-                    </div>
-                </div>
-                <button id="nextLevelBtn" class="neon-btn primary">
-                    <span class="btn-text">NEXT LEVEL</span>
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <div class="notification-container" id="notificationContainer" aria-live="assertive"></div>
     
     <script src="brick-classes.js"></script>
     <script src="game-classes.js"></script>
